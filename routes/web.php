@@ -18,6 +18,11 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function () {
     Route::get('news/create','Admin\NewsController@add')->middleware('auth');
     Route::post('news/create','Admin\NewsController@create')->middleware('auth');
+    Route::get('news','Admin\NewsController@index')->middleware('auth'); //PHP/Laravel 15テキスト
+    Route::get('news/edit','Admin\NewsController@edit')->middleware('auth'); //PHP/Laravel 16テキスト
+    Route::post('news/edit','Admin\NewsController@update')->middleware('auth'); //PHP/Laravel 16テキスト
+    Route::post('news/delete','Admin\NewsController@delete')->middleware('auth'); //PHP/Laravel 16テキスト
+    
     
  
     
@@ -28,8 +33,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('profile/update','Admin\ProfileController@update')->middleware('auth');
 });
 
-   //課題3
-    Route::get('xxx','Admin\AAAController@bbb');
+//課題3
+Route::get('xxx','Admin\AAAController@bbb');
 
 Auth::routes();
 
