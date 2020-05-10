@@ -15,4 +15,12 @@ class Profile extends Model
         'hobby' => 'required',
         'introduction' => 'required',
         );
+        
+    //PHP/Laravel 17 課題↓
+    public function histories()
+    {
+      return $this->hasMany('App\ProfileHistory');
+
+    }
+    //PHP/Laravel 17 課題↑
 }

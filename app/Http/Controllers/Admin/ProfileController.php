@@ -7,6 +7,12 @@ use App\Http\Controllers\Controller;
 
 use App\Profile;
 
+//PHP/Laravel 17 課題↓
+use App\ProfileHistory;
+
+use Carbon\Carbon;
+//PHP/Laravel 17 課題↑
+
 class ProfileController extends Controller
 {
     //
@@ -52,8 +58,15 @@ class ProfileController extends Controller
         unset($profile_form['_token']);
         // 該当するデータを上書きして保存する
         $profile->fill($profile_form)->save();
+        
+        //PHP/Laravel 17 課題↓
+        $history = new ProfileHistory;
+        $history->profile_id = $profile->id;
+        $history->edited_at = Carbon::now();
+        $history->save();
+        //PHP/Laravel 17 課題↑
 
-          return redirect('admin/profile');
+        return redirect('admin/profile');
     }
      
     public function delete(Request $request)

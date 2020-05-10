@@ -7,6 +7,14 @@ use App\Http\Controllers\Controller;
 
 use App\News;
 
+//---PHP/Laravel 17 テキスト---↓
+// 以下を追記
+use App\History;
+
+// 以下を追記
+use Carbon\Carbon;
+//---PHP/Laravel 17 テキスト---↑
+
 class NewsController extends Controller
 {
   //
@@ -91,6 +99,14 @@ class NewsController extends Controller
       unset($news_form['_token']);
       // 該当するデータを上書きして保存する
       $news->fill($news_form)->save();
+      
+      //---PHP/Laravel 17 テキスト---↓
+      // 以下を追記
+      $history = new History;
+      $history->news_id = $news->id;
+      $history->edited_at = Carbon::now();
+      $history->save();
+      //---PHP/Laravel 17 テキスト---↑
 
       return redirect('admin/news');
   }
