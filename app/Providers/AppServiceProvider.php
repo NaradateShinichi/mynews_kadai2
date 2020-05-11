@@ -23,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // PHP/Laravelコース - Herokuへのデプロイ テキスト
+        // 以下を追記
+        if (\App::environment('production')) {
+            \URL::forceScheme('https');
+        }
     }
 }
