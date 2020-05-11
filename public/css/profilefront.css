@@ -1,0 +1,55 @@
+body {
+  color: #000;
+}
+
+.header .logo {
+  width: 120px;
+  height: 82px;
+}
+
+.headline .name {
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.headline .name h1 {
+  color: #fff;
+  font-size: 1em;
+}
+
+.headline .gender {
+  font-size: 1em;
+}
+
+.headline .hobby {
+  font-size: 1em;
+}
+
+.headline .introduction {
+  font-size: 1em;
+}
+
+.posts .post .date {
+  font-size: 0.6em;
+  color: #999999;
+}
+
+.posts .post .name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.posts .post .gender {
+  font-size: 0.8em;
+}
+
+.posts .post .hobby {
+  font-size: 0.8em;
+}
+
+.posts .post .introduction {
+  font-size: 0.8em;
+}
+

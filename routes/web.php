@@ -43,3 +43,8 @@ Route::get('xxx','Admin\AAAController@bbb');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'NewsController@index'); //PHP/Laravel 18テキスト
+
+Route::get('/profile', 'ProfileController@index'); //PHP/Laravel 18テキスト
+
